@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define HOST_OS 1 // set to 1 for Linux, default is 0 (Windows)
-#include "helper.dtsi"
+#include "helper.h"
 #include "swedish.dtsi"
 
 #define LOWER 1
