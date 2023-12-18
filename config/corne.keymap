@@ -42,7 +42,7 @@
             bindings
                 = <&macro_press &kp LSHFT &kp LCTRL &kp U>
                 , <&macro_release &kp LSHFT &kp LCTRL &kp U>
-                , <&macro_tap &kp N0 &kp N0 &kp E &kp N5>
+                , <&macro_tap &kp N0 &kp N0 &kp E &kp N5 &kp SPACE>
                 ;
         };
         uni_aa: swe_a_diaeresis {
@@ -50,16 +50,17 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LSHFT &kp LCTRL &kp U>
-                , <&macro_tap &kp N0 &kp N0 &kp E &kp N4>
                 , <&macro_release &kp LSHFT &kp LCTRL &kp U>
+                , <&macro_tap &kp N0 &kp N0 &kp E &kp N4 &kp SPACE>
                 ;
         };
         uni_o: swe_o_diaeresis {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp LSHFT &kp LCTRL &kp U>
-                , <&macro_tap &kp N0 &kp N0 &kp F &kp N6>
+                = <&macro_press &kp LSHFT &kp LCTRL &kp U>
+                , <&macro_release &kp LSHFT &kp LCTRL &kp U>
+                , <&macro_tap &kp N0 &kp N0 &kp F &kp N6 &kp SPACE>
                 ;
         };
     };
