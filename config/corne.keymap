@@ -41,8 +41,8 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LSHFT &kp LCTRL &kp U>
-                , <&macro_tap &kp N0 &kp N0 &kp E &kp N5>
                 , <&macro_release &kp LSHFT &kp LCTRL &kp U>
+                , <&macro_tap &kp N0 &kp N0 &kp E &kp N5>
                 ;
         };
         uni_aa: swe_a_diaeresis {
@@ -58,9 +58,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LSHFT &kp LCTRL &kp U>
+                = <&macro_tap &kp LSHFT &kp LCTRL &kp U>
                 , <&macro_tap &kp N0 &kp N0 &kp F &kp N6>
-                , <&macro_release &kp LSHFT &kp LCTRL &kp U>
                 ;
         };
     };
