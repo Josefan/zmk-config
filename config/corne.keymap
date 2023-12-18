@@ -39,38 +39,6 @@
             bindings = <&kp V>, <&kp C_AC_PASTE>;
         };
     };
-    macros {
-        uni_a: swe_a_ring {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap_time 10>
-                , <&macro_press &kp LSHFT &kp LCTRL &kp U>
-                , <&macro_release &kp LSHFT &kp LCTRL &kp U>
-                , <&macro_tap &kp N0 &kp N0 &kp E &kp N5 &kp SPACE>
-                ;
-        };
-        uni_aa: swe_a_diaeresis {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap_time 10>
-                , <&macro_press &kp LSHFT &kp LCTRL &kp U>
-                , <&macro_release &kp LSHFT &kp LCTRL &kp U>
-                , <&macro_tap &kp N0 &kp N0 &kp E &kp N4 &kp SPACE>
-                ;
-        };
-        uni_o: swe_o_diaeresis {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap_time 10>
-                , <&macro_press &kp LSHFT &kp LCTRL &kp U>
-                , <&macro_release &kp LSHFT &kp LCTRL &kp U>
-                , <&macro_tap &kp N0 &kp N0 &kp F &kp N6 &kp SPACE>
-                ;
-        };
-    };
     keymap {
         compatible = "zmk,keymap";
         default_layer {
