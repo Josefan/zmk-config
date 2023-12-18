@@ -35,6 +35,35 @@
             bindings = <&kp V>, <&kp C_AC_PASTE>;
         };
     };
+    macros {
+        uni_a: swe_a_ring {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT &kp LCTRL &kp U>
+                , <&macro_tap &kp N0 &kp N0 &kp E &kp N5>
+                , <&macro_release &kp LSHFT &kp LCTRL &kp U>
+                ;
+        };
+        uni_aa: swe_a_diaeresis {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT &kp LCTRL &kp U>
+                , <&macro_tap &kp N0 &kp N0 &kp E &kp N4>
+                , <&macro_release &kp LSHFT &kp LCTRL &kp U>
+                ;
+        };
+        uni_o: swe_o_diaeresis {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT &kp LCTRL &kp U>
+                , <&macro_tap &kp N0 &kp N0 &kp F &kp N6>
+                , <&macro_release &kp LSHFT &kp LCTRL &kp U>
+                ;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -44,10 +73,10 @@
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | DEL  |
             //                    |tSETT| GUI | lSPC|   |rBKSP| ENT  | td0 |
             bindings = <
-                &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U        &kp I     &kp O   &kp P    &kp LBKT
-                &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J        &kp K     &kp L   &kp SEMI &kp SQT
-                &kp LSHFT &kp Z &kp X &tdC  &tdV  &kp B   &kp N &kp M        &kp COMMA &kp DOT &kp FSLH &kp DEL
-                                   &tog SETT &kp LGUI &lt LOWER SPACE        &lt RAISE BKSP    &kp RET  &tdA
+                &kp TAB   &kp Q &kp W &kp E &kp R &kp T        &kp Y &kp U &kp I     &kp O   &kp P    &kp LBKT
+                &kp LCTRL &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K     &kp L   &kp SEMI &kp SQT
+                &kp LSHFT &kp Z &kp X &tdC  &tdV  &kp B        &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp DEL
+                     &tog SETT &kp LGUI &lt LOWER SPACE        &lt RAISE BKSP &kp RET  &tdA
             >;
         };
         lower_layer {
@@ -57,8 +86,8 @@
             // | SHFT |     |     | Vol-| Vol+| PGDN|   | Home| End |     |     |     |  DEL |
             //                    |tSETT| GUI | SPC |   | ENT | ENT | tLWR|
             bindings = <
-                &kp ESC   &kp N1     &kp N2     &kp N3       &kp N4       &kp N5              &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &trans
-                &kp LCTRL &kp C_MUTE &kp C_PREV &kp C_NEXT   &kp C_PP     &kp PG_UP           &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+                &kp ESC   &kp N1     &kp N2     &kp N3       &kp N4       &kp N5              &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &uni_a
+                &kp LCTRL &kp C_MUTE &kp C_PREV &kp C_NEXT   &kp C_PP     &kp PG_UP           &kp LEFT &kp DOWN &kp UP &kp RIGHT &uni_o &uni_aa
                 &kp LSHFT &trans     &trans     &kp C_VOL_DN &kp C_VOL_UP &kp PG_DN           &kp HOME &kp END  &trans &trans    &trans &trans
                                                 &trans       &trans       &kp SPACE           &kp BKSP &trans   &tog LOWER
             >;
