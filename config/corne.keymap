@@ -46,9 +46,6 @@
             bindings = <&kp V>, <&kp C_AC_PASTE>;
         };
     };
-
-    ZMK_CONDITIONAL_LAYER(LOWER RAISE, SETT);
-
     keymap {
         compatible = "zmk,keymap";
         default_layer {
