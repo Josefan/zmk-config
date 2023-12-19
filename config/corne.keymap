@@ -40,7 +40,7 @@
         };
     };
 
-    ZMK_CONDITIONAL_LAYER(LOWER RAISE, SETT)
+    ZMK_CONDITIONAL_LAYER(LOWER RAISE, SETT);
 
     keymap {
         compatible = "zmk,keymap";
