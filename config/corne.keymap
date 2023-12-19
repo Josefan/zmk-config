@@ -24,6 +24,13 @@
             tapping-term-ms = <200>;
             bindings = <&tog LOWER>, <&kp LALT>;
         };
+        tdSETT: tap_dance_SETT {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_Settings";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LGUI>, <&tog SETT>;
+        };
         tdC: tap_dance_C {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_C";
@@ -49,12 +56,12 @@
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | DEL  |
-            //                     | GUI | LWR | SPC|   | RET | RSE  | tdAlt |
+            //                | SETT/GUI | LWR | SPC|   | RET | RSE  | Alt/LWR |
             bindings = <
                 &kp TAB   &kp Q &kp W &kp E &kp R &kp T        &kp Y &kp U &kp I     &kp O   &kp P    &kp BKSP
                 &kp LCTRL &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K     &kp L   &kp SEMI &kp SQT
                 &kp LSHFT &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp DEL
-                     &kp LGUI &mo LOWER &kp SPACE              &kp RET &mo RAISE  &tdAlt
+                            &tdSETT &mo LOWER &kp SPACE        &kp RET &mo RAISE  &tdAlt
             >;
         };
         lower_layer {
@@ -88,12 +95,12 @@
             // | ESC  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |      |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
             // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    |     |     |     |   |     |     |     |
+            //                    |tSETT|     |     |   |     |     |     |
                 bindings = <
                     &kp ESC    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5               &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &trans
                     &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4         &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
                     &kp LSHFT  &trans       &trans       &trans       &trans       &trans               &trans   &trans   &trans &trans    &trans &trans
-                                                         &trans       &trans       &trans               &trans   &trans   &trans
+                                                         &tog SETT    &trans       &trans               &trans   &trans   &trans
                 >;
         };
     };
