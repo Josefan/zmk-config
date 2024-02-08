@@ -22,7 +22,7 @@
             label = "TAP_DANCE_ALT";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&tog LOWER>, <&kp LALT>;
+            bindings = <&kp LALT>, <&tog LOWER>;
         };
         tdSETT: tap_dance_SETT {
             compatible = "zmk,behavior-tap-dance";
