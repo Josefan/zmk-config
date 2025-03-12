@@ -12,6 +12,7 @@
 #include "helper.h"
 #include "swedish.dtsi"
 
+#define DEFAULT 0
 #define LOWER 1
 #define RAISE 2
 #define SETT 3
