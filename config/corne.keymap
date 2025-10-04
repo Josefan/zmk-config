@@ -30,7 +30,7 @@
             label = "TAP_DANCE_Settings";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LGUI>, <&tog SETT>;
+            bindings = <&kp LCTRL>, <&tog SETT>;
         };
         tdC: tap_dance_C {
             compatible = "zmk,behavior-tap-dance";
@@ -53,12 +53,12 @@
           display-name = "base";
             // -----------------------------------------------------------------------------------------
             // |  TAB     |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL/ESC |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+            // | CMD/ESC |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
             // | SHFT     |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | DEL  |
-            //                    | SETT/GUI | LWR | SPC|   | RET | RSE  | Alt/LWR |
+            //                    | SETT/OPT | LWR | SPC|   | RET | RSE  | Alt/LWR |
             bindings = <
                 &kp TAB       &kp Q &kp W &kp E &kp R &kp T        &kp Y &kp U &kp I     &kp O   &kp P    &kp BKSP
-                &mt LCTRL ESC &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K     &kp L   &kp SEMI &kp SQT
+                &mt LGUI ESC &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K     &kp L   &kp SEMI &kp SQT
                 &kp LSHFT     &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp DEL
                                 &tdSETT &mo LOWER &kp SPACE        &kp RET &mo RAISE  &tdAlt
             >;
@@ -104,6 +104,20 @@
                     &kp LSHFT  &trans       &trans       &trans       &trans       &trans               &trans   &trans   &trans &trans    &trans &trans
                                                          &tog SETT    &trans       &trans               &trans   &trans   &trans
                 >;
+        };
+        default_layer {
+          display-name = "base";
+            // -----------------------------------------------------------------------------------------
+            // |  TAB     |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+            // | CTRL/ESC |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+            // | SHFT     |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | DEL  |
+            //                    | SETT/GUI | LWR | SPC|   | RET | RSE  | Alt/LWR |
+            bindings = <
+                &kp TAB       &kp Q &kp W &kp E &kp R &kp T        &kp Y &kp U &kp I     &kp O   &kp P    &kp BKSP
+                &mt LCTRL ESC &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K     &kp L   &kp SEMI &kp SQT
+                &kp LSHFT     &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp DEL
+                                &tdSETT &mo LOWER &kp SPACE        &kp RET &mo RAISE  &tdAlt
+            >;
         };
     };
 };
