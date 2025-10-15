@@ -52,7 +52,7 @@
               #binding-cells = <0>;
               bindings
                   = <&macro_press &kp LSHFT>
-                  , <&macro_tap &sv_ao
+                  , <&macro_tap &sv_ao>
                   , <&macro_release &kp LSHFT>
                   ;
           };
@@ -61,7 +61,7 @@
               #binding-cells = <0>;
               bindings
                   = <&macro_press &kp LSHFT>
-                  , <&macro_tap &sv_ae
+                  , <&macro_tap &sv_ae>
                   , <&macro_release &kp LSHFT>
                   ;
           };
@@ -70,7 +70,7 @@
               #binding-cells = <0>;
               bindings
                   = <&macro_press &kp LSHFT>
-                  , <&macro_tap &sv_oe
+                  , <&macro_tap &sv_oe>
                   , <&macro_release &kp LSHFT>
                   ;
           };
