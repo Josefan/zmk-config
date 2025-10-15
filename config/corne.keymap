@@ -46,6 +46,35 @@
             tapping-term-ms = <150>;
             bindings = <&kp V>, <&kp C_AC_PASTE>;
         };
+        macros {
+          sv_ao_macro: sv_ao_macro {
+              compatible = "zmk,behavior-macro";
+              #binding-cells = <0>;
+              bindings
+                  = <&macro_press &kp LSHFT>
+                  , <&macro_tap &sv_ao
+                  , <&macro_release &kp LSHFT>
+                  ;
+          };
+          sv_ae_macro: sv_ae_macro {
+              compatible = "zmk,behavior-macro";
+              #binding-cells = <0>;
+              bindings
+                  = <&macro_press &kp LSHFT>
+                  , <&macro_tap &sv_ae
+                  , <&macro_release &kp LSHFT>
+                  ;
+          };
+          sv_oe_macro: sv_oe_macro {
+              compatible = "zmk,behavior-macro";
+              #binding-cells = <0>;
+              bindings
+                  = <&macro_press &kp LSHFT>
+                  , <&macro_tap &sv_oe
+                  , <&macro_release &kp LSHFT>
+                  ;
+          };
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -58,7 +87,7 @@
             //                    | SETT/OPT | LWR | SPC|   | RET | RSE  | Alt/LWR |
             bindings = <
                 &kp TAB       &kp Q &kp W &kp E &kp R &kp T        &kp Y &kp U &kp I     &kp O   &kp P    &kp BKSP
-                &mt LGUI ESC &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K     &kp L   &kp SEMI &kp SQT
+                &mt LGUI ESC  &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K     &kp L   &kp SEMI &kp SQT
                 &kp LSHFT     &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp DEL
                                 &tdSETT &mo LOWER &kp SPACE        &kp RET &mo RAISE  &tdAlt
             >;
@@ -71,9 +100,9 @@
             // | SHFT |     |     | Vol-| Vol+| PGDN|   | Home| End |     |     |     |  DEL |
             //                    | GUI | LWR | SPC |   |     |     | tLWR|
             bindings = <
-                &kp ESC   &kp N1     &kp N2     &kp N3       &kp N4       &kp N5              &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &sv_ao 
-                &kp LCTRL &kp C_MUTE &kp C_PREV &kp C_NEXT   &kp C_PP     &kp PG_UP           &kp LEFT &kp DOWN &kp UP &kp RIGHT &sv_oe &sv_ae
-                &kp LSHFT &trans     &trans     &kp C_VOL_DN &kp C_VOL_UP &kp PG_DN           &kp HOME &kp END  &trans &trans    &trans &trans
+                &kp ESC   &kp N1     &kp N2     &kp N3       &kp N4       &kp N5              &kp N6   &kp N7   &kp N8 &kp N9    &kp N0       &sv_ae_macro
+                &kp LCTRL &kp C_MUTE &kp C_PREV &kp C_NEXT   &kp C_PP     &kp PG_UP           &kp LEFT &kp DOWN &kp UP &kp RIGHT &sv_oe_macro &sv_ao_macro
+                &kp LSHFT &trans     &trans     &kp C_VOL_DN &kp C_VOL_UP &kp PG_DN           &kp HOME &kp END  &trans &trans    &trans       &trans
                                                 &trans       &trans       &trans              &kp LG(T)   &trans   &tog LOWER
             >;
         };
