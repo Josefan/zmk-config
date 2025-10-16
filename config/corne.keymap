@@ -23,57 +23,70 @@
             label = "TAP_DANCE_ALT";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LALT>, <&tog LOWER>;
+            bindings
+                = <&kp LALT>
+                , <&tog LOWER>
+                ;
         };
         tdSETT: tap_dance_SETT {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_Settings";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LCTRL>, <&tog SETT>;
+            bindings
+                = <&kp LGUI>
+                , <&tog SETT>
+                ;
         };
         tdC: tap_dance_C {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_C";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp C>, <&kp C_AC_COPY>, <&kp C_AC_CUT>;
+            bindings
+                = <&kp C>
+                , <&kp C_AC_COPY>
+                , <&kp C_AC_CUT>
+                ;
         };
         tdV: tap_dance_V {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_V";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&kp V>, <&kp C_AC_PASTE>;
+            bindings
+                = <&kp V>
+                , <&kp C_AC_PASTE>
+                ;
         };
-        macros {
-          sv_ao_macro: sv_ao_macro {
-              compatible = "zmk,behavior-macro";
-              #binding-cells = <0>;
-              bindings
-                  = <&macro_press &kp LSHFT>
-                  , <&macro_tap &sv_ao>
-                  , <&macro_release &kp LSHFT>
-                  ;
-          };
-          sv_ae_macro: sv_ae_macro {
-              compatible = "zmk,behavior-macro";
-              #binding-cells = <0>;
-              bindings
-                  = <&macro_press &kp LSHFT>
-                  , <&macro_tap &sv_ae>
-                  , <&macro_release &kp LSHFT>
-                  ;
-          };
-          sv_oe_macro: sv_oe_macro {
-              compatible = "zmk,behavior-macro";
-              #binding-cells = <0>;
-              bindings
-                  = <&macro_press &kp LSHFT>
-                  , <&macro_tap &sv_oe>
-                  , <&macro_release &kp LSHFT>
-                  ;
-          };
+    };
+    macros {
+        sv_ao_macro: sv_ao_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &sv_ao>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        sv_ae_macro: sv_ae_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &sv_ae>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        sv_oe_macro: sv_oe_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &sv_oe>
+                , <&macro_release &kp LALT>
+                ;
         };
     };
     keymap {
@@ -82,12 +95,12 @@
           display-name = "base";
             // -----------------------------------------------------------------------------------------
             // |  TAB     |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CMD/ESC |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+            // | CTRL/ESC |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
             // | SHFT     |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | DEL  |
-            //                    | SETT/OPT | LWR | SPC|   | RET | RSE  | Alt/LWR |
+            //                    | CMD/SETT| LWR | SPC|   | RET | RSE  | Alt/LWR |
             bindings = <
                 &kp TAB       &kp Q &kp W &kp E &kp R &kp T        &kp Y &kp U &kp I     &kp O   &kp P    &kp BKSP
-                &mt LGUI ESC  &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K     &kp L   &kp SEMI &kp SQT
+                &mt LCTRL ESC &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K     &kp L   &kp SEMI &kp SQT
                 &kp LSHFT     &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp DEL
                                 &tdSETT &mo LOWER &kp SPACE        &kp RET &mo RAISE  &tdAlt
             >;
