@@ -91,10 +91,10 @@
     };
     keymap {
         compatible = "zmk,keymap";
-        mac_layer {
+        default_layer {
           display-name = "base";
             // -----------------------------------------------------------------------------------------
-            // |  TAB     |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+            // | TAB      |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL/ESC |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
             // | SHFT     |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | DEL  |
             //                    | CMD/SETT| LWR | SPC|   | RET | RSE  | Alt/LWR |
@@ -113,9 +113,9 @@
             // | SHFT |     |     | Vol-| Vol+| PGDN|   | Home| End |     |     |     |  DEL |
             //                    | GUI | LWR | SPC |   |     |     | tLWR|
             bindings = <
-                &kp ESC   &kp N1     &kp N2     &kp N3       &kp N4       &kp N5              &kp N6   &kp N7   &kp N8 &kp N9    &kp N0       &sv_ae_macro
-                &kp LCTRL &kp C_MUTE &kp C_PREV &kp C_NEXT   &kp C_PP     &kp PG_UP           &kp LEFT &kp DOWN &kp UP &kp RIGHT &sv_oe_macro &sv_ao_macro
-                &kp LSHFT &trans     &trans     &kp C_VOL_DN &kp C_VOL_UP &kp PG_DN           &kp HOME &kp END  &trans &trans    &trans       &trans
+                &kp ESC   &kp N1     &kp N2     &kp N3       &kp N4       &kp N5              &kp N6   &kp N7   &kp N8 &kp N9    &kp N0         &kp LA(&sv_ao)
+                &kp LCTRL &kp C_MUTE &kp C_PREV &kp C_NEXT   &kp C_PP     &kp PG_UP           &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp LA(&sv_oe) &kp LA(&sv_ae)
+                &kp LSHFT &trans     &trans     &kp C_VOL_DN &kp C_VOL_UP &kp PG_DN           &kp HOME &kp END  &trans &trans    &trans         &trans
                                                 &trans       &trans       &trans              &kp LG(T)   &trans   &tog LOWER
             >;
         };
@@ -146,20 +146,6 @@
                     &kp LSHFT  &trans       &trans       &trans       &trans       &trans               &trans   &trans   &trans &trans    &trans &trans
                                                          &tog SETT    &trans       &trans               &trans   &trans   &trans
                 >;
-        };
-        default_layer {
-          display-name = "base";
-            // -----------------------------------------------------------------------------------------
-            // |  TAB     |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL/ESC |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT     |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | DEL  |
-            //                    | SETT/GUI | LWR | SPC|   | RET | RSE  | Alt/LWR |
-            bindings = <
-                &kp TAB       &kp Q &kp W &kp E &kp R &kp T        &kp Y &kp U &kp I     &kp O   &kp P    &kp BKSP
-                &mt LCTRL ESC &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K     &kp L   &kp SEMI &kp SQT
-                &kp LSHFT     &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp DEL
-                                &tdSETT &mo LOWER &kp SPACE        &kp RET &mo RAISE  &tdAlt
-            >;
         };
     };
 };
